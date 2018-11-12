@@ -50,6 +50,7 @@ class DrawableCanvas extends React.Component {
       image.src = this.state.board.data
       image.onload = function() {
         context.drawImage(image,0,0)
+        
         this.setState({
           context
         })
