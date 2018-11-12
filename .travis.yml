@@ -24,7 +24,7 @@ script:
   - cp dist/* syncdist/build
   - cp index.html syncdist
   - cd syncdist
-  - aws s3 sync . s3://drew-board
+  - aws s3 sync . s3://draw-board
 
 
 env:
