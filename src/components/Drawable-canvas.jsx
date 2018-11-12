@@ -50,7 +50,7 @@ class DrawableCanvas extends React.Component {
       image.src = this.state.board.data
       image.onload = function() {
         context.drawImage(image,0,0)
-        
+
         this.setState({
           context
         })
@@ -189,7 +189,7 @@ class DrawableCanvas extends React.Component {
 
   erase(x, y) {
     const { lineWidth } = this.props.canvasSettings
-    const scaled = lineWidth * 5
+    const scaled = lineWidth * 10
     this.state.context.clearRect(x - scaled / 2, y - scaled / 2, scaled, scaled)
   }
 
