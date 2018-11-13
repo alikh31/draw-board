@@ -1,5 +1,5 @@
 
-const canvas = (state = {brushColor: 'black', lineWidth: 2, tool: 'pen', prepareToSave: false, prepareToDownload: false}, action) => {
+const canvas = (state = {brushColor: 'black', lineWidth: 3, tool: 'pen', prepareToSave: false, prepareToDownload: false}, action) => {
   switch (action.type) {
     case 'SET_CANVAS_BRUSH_COLOR':
       return Object.assign({}, state, {brushColor: action.payload})

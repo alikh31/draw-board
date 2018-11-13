@@ -38,12 +38,15 @@ class DrawableCanvas extends React.Component {
   componentDidMount() {
     const canvas = ReactDOM.findDOMNode(this)
 
+    const dpr = 2
+
     canvas.style.width = '100%'
     canvas.style.height = '100%'
-    canvas.width = canvas.offsetWidth
-    canvas.height = canvas.offsetHeight
+    canvas.width = canvas.offsetWidth * dpr
+    canvas.height = canvas.offsetHeight * dpr
 
     const context = canvas.getContext('2d')
+    context.scale(dpr, dpr)
 
     if(this.state.board && this.state.board.data) {
       var image = new Image();
@@ -136,7 +139,7 @@ class DrawableCanvas extends React.Component {
     this.state.context.beginPath()
 
     const { lineWidth } = this.props.canvasSettings
-    this.useTool(e.clientX - lineWidth/2, e.clientY - lineWidth/2, e.clientX + lineWidth/2, e.clientY + lineWidth/2)
+    this.useTool(e.clientX - lineWidth/10, e.clientY - lineWidth/10, e.clientX + lineWidth/10, e.clientY + lineWidth/10)
 
     this.setState({
       lastX: e.clientX - rect.left,
@@ -203,6 +206,7 @@ class DrawableCanvas extends React.Component {
     const { widthScaleFactor, heightScaleFactor } = this.state
     const newContext = this.state.context
     newContext.strokeStyle = this.props.canvasSettings.brushColor
+    newContext.lineCap = 'round'
     newContext.lineWidth = this.props.canvasSettings.lineWidth
     this.setState({
       context: newContext
