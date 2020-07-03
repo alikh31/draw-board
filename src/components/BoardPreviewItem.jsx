@@ -28,7 +28,7 @@ class BoardPreviewItem extends Component {
     return (
       <div>
         <a href={'/draw-board/' + base.id}>
-          <img src={base.data}  className="img-responsive" />
+          <img src={base.data}  style={{ borderRadius: '5px',border: '2px solid black' }} className="img-responsive" />
         </a>
         <hr/>
       </div>

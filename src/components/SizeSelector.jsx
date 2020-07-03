@@ -12,11 +12,12 @@ class SizeSelector extends Component {
   }
 
   componentDidMount() {
+    this.props.setCanvasLineWidth(2)
   }
 
   handleChange(e) {
     this.setState({ value: e.filter(t => this.state.value.indexOf(t) ) });
-    this.props.setCanvasLineWidth(e.filter(t => this.state.value.indexOf(t) )[0] * 3)
+    this.props.setCanvasLineWidth(e.filter(t => this.state.value.indexOf(t) )[0] * 2)
   }
 
   render() {

@@ -18,8 +18,8 @@ class DrawBoard extends Component {
     return (
       <div>
         <Viewer
-          largeRowCount={1}
-          mediomRowCount={1}
+          largeRowCount={3}
+          mediomRowCount={2}
           smallRowCount={1}
           ItemView={BoardPreviewItem}
           dommy={true}
